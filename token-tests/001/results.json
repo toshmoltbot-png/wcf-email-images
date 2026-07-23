@@ -1,0 +1,28 @@
+[
+  {
+    "model": "Claude Sonnet 4.6",
+    "error": "no key"
+  },
+  {
+    "model": "Gemini 2.5 Pro",
+    "input_tokens": 585,
+    "output_tokens": 753,
+    "time_seconds": 12.3,
+    "response_length": 2795,
+    "found_bugs": 3,
+    "response": "```jsx\n// FIXED React Landing Page Component - The Daily Token Test #001\n\nimport React, { useState, useEffect } from 'react';\n\nfunction LandingPage({ products }) {\n  const [cart, setCart] = useState([]);\n  const [total, setTotal] = useState(0);\n  const [email, setEmail] = useState('');\n  const [submitted, setSubmitted] = useState(false);\n\n  // Bug 1 Fix: Added dependency array [cart].\n  // Why: Without a dependency array, this effect runs on every render, causing an infinite loop because it upda",
+    "cost_usd": "$0.0102",
+    "total_tokens": 1338
+  },
+  {
+    "model": "Grok 4",
+    "input_tokens": 737,
+    "output_tokens": 506,
+    "time_seconds": 10.2,
+    "response_length": 1910,
+    "found_bugs": 3,
+    "response": "```jsx\n// FIXED React Landing Page Component\n\nimport React, { useState, useEffect } from 'react';\n\nfunction LandingPage({ products }) {\n  const [cart, setCart] = useState([]);\n  const [total, setTotal] = useState(0);\n  const [email, setEmail] = useState('');\n  const [submitted, setSubmitted] = useState(false);\n\n  // Fix 1: Added [cart] dependency to prevent infinite loop\n  useEffect(() => {\n    const newTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);\n    setTotal(newTotal);\n ",
+    "cost_usd": "$0.0045",
+    "total_tokens": 1243
+  }
+]
