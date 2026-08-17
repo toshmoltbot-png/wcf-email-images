@@ -1,0 +1,4 @@
+1: no counterexample - true
+2: 4 = 2^2 (not true for n=2)
+3: sqrt(2)^(sqrt(2)) is irrational (no straightforward counterexample needed)
+

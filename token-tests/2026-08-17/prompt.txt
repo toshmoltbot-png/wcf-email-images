@@ -1,0 +1,6 @@
+For each of the three statements below, respond with EXACTLY one line in the form "N: <answer>".
+If the statement is false, give the smallest/simplest explicit counterexample. If no counterexample exists because the statement is true, write "no counterexample - true".
+1. Every Fermat number 2^(2^n)+1 is prime for all integers n >= 0.
+2. For every positive integer n, the sum of the first n odd positive integers is a perfect square.
+3. If a and b are both irrational numbers, then a^b is irrational.
+No preamble, no explanation beyond the counterexample itself.
