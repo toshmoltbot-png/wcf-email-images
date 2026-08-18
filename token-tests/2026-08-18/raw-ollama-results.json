@@ -1,0 +1,32 @@
+[
+ {
+  "name": "short",
+  "out_tokens": 24,
+  "gen_secs": 0.8,
+  "tok_per_sec": 29.9,
+  "wall": 1.06,
+  "prompt_tokens": 40,
+  "first_120": "An API rate limit is the maximum number of requests that can be made to an API within a specified time frame.",
+  "full": "An API rate limit is the maximum number of requests that can be made to an API within a specified time frame."
+ },
+ {
+  "name": "medium",
+  "out_tokens": 118,
+  "gen_secs": 4.09,
+  "tok_per_sec": 28.8,
+  "wall": 4.31,
+  "prompt_tokens": 54,
+  "first_120": "Inference speed is paramount for real-time agent workloads because it directly impacts the responsiveness and efficiency",
+  "full": "Inference speed is paramount for real-time agent workloads because it directly impacts the responsiveness and efficiency of decision-making processes. Faster inference allows agents to process data and make decisions in real time, enabling timely responses to changing environments or user needs. In contrast, raw model quality, while essential, primarily determines the accuracy and reliability of predictions. For real-time applications where quick action is critical, speed can often be a more decisive factor than absolute model precision. Therefore, optimizing inference speed enables agents to handle high volumes of data and perform tasks swiftly, ensuring timely and effective responses in dynamic scenarios."
+ },
+ {
+  "name": "code",
+  "out_tokens": 268,
+  "gen_secs": 9.33,
+  "tok_per_sec": 28.7,
+  "wall": 9.6,
+  "prompt_tokens": 46,
+  "first_120": "```python import requests from time import sleep  def exponential_backoff_request(url, max_retries=5):     for i in rang",
+  "full": "```python\nimport requests\nfrom time import sleep\n\ndef exponential_backoff_request(url, max_retries=5):\n    for i in range(max_retries):\n        try:\n            response = requests.get(url)\n            response.raise_for_status()  # Raises an HTTPError for bad responses\n            return response\n        except requests.RequestException as e:\n            print(f\"Attempt {i+1} failed: {e}\")\n            if i < max_retries - 1:\n                sleep_time = 2 ** i  # Exponential backoff\n                print(f\"Retrying in {sleep_time} seconds...\")\n                sleep(sleep_time)\n    raise Exception(\"Max retries exceeded, giving up.\")\n\n# Example usage\nurl = 'https://api.example.com/data'\nresponse = exponential_backoff_request(url)\nprint(response.json())\n```\n\nThis Python function `exponential_backoff_request` attempts to make an HTTP GET request to the specified URL. If the request fails (raises a `RequestException`), it will retry the request with increasing delays based on exponential backoff. The maximum number of retries can be set via the `max_retries` parameter, and each subsequent retry waits for double the time as the previous one. If all retries fail, it raises an exception indicating that the maximum retries have been exceeded."
+ }
+]
